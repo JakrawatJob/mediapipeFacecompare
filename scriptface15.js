@@ -57,11 +57,11 @@ faceDetection.onResults((res) => {
             const rightEyeLandmark = res.detections[0].landmarks[0].x;
             const rightearLandmark = res.detections[0].landmarks[4].x;
             //console.log(leftEyeLandmark-leftearLandmark)
-            if(rightEyeLandmark-rightearLandmark<0.02){
+            if(rightEyeLandmark-rightearLandmark<0.025){
               console.log("turn right");
               positionface.innerText = "turn right"
             }
-            else if(leftearLandmark-leftEyeLandmark<0.02){
+            else if(leftearLandmark-leftEyeLandmark<0.025){
               console.log("turn left");
               positionface.innerText = "turn left"
             }else{positionface.innerText = "หน้าตรง"}
