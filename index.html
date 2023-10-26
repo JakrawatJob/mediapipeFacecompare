@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>MediaPipe Face Detection test</title>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        #base64Output {
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-width: 500px; 
+            max-height: 200px; 
+            overflow: auto;
+            white-space: pre-wrap; 
+        }
+    </style>
+</head>
+<body>
+    <h1>MediaPipe Face Detection test</h1>
+    <div class="container">
+        <video id="videoElement" playsinline style="display:none"></video>
+        <canvas id="canvasElement" width="720" height="720" style="max-width:95vw"></canvas>
+    </div>
+    <p>ข้อมูล Base64 รูปภาพ:</p>
+    <pre id="base64Output"></pre>
+    <button id="copyButton">คัดลอก Base64</button>
+    <button id="autoCaptureButton">Auto Capture</button>
+    <pre id="positionface">หน้าตรง</pre>
+    <pre id="facedetect">ตรวจสอบ</pre>
+    <pre id="idcarddetect">ตรวจสอบ</pre>
+    <pre id="completedetect">กำลังประมวลผล</pre>
+    
+    <label><input type="checkbox" id="showimg" checked>Show original image</label>
+    <label><input type="checkbox" id="mirrormode" checked>Mirror mode</label>
+    <button id="toggleCamera">เปิด/ปิดกล้อง</button>
+    <hr>
+    <script type="module" src="scriptface15.js"></script>
+    <script defer src="scripttest14.js"></script>
+</body>
+</html>
